@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/main_page.css">
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+
+    <!-- simple navigation and title -->
+    <div class="navbar navbar-expand-lg navbar-dark">
+      <div class="nav-container container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">opencyb</a>
+            </li>
+            <li class="breadcrumb-item active"><b>{{ site.course.name }}</b></li>
+        </ol>
+        <div class="rightnav">
+          <button class="btn btn-sm btn-warning">Створити</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- pages -->
+    <div class="container">
+      <div class="row">
+
+        <!-- navigation and content -->
+        <div class="col-9 order-2">
+          <ul class="nav nav-fill nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link {% if page.path == 'index.md' %}active{% endif %}" href="{{ site.url }}/"><i class="fa fa-book"></i> Конспекти</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if page.path == 'extra.md' %}active{% endif %}" href="{{ site.url }}/extra/"><i class="fa fa-globe"></i> Додаткові матеріали</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if page.path == 'info.md' %}active{% endif %}" href="{{ site.url }}/info/"><i class="fa fa-info-circle"></i> Логістика курсу</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if page.path == 'sitemap.html' %}active{% endif %}" href="{{ site.url }}/sitemap/"><i class="fa fa-sitemap"></i> Карта сайту</a>
+            </li>
+          </ul>
+          {% include edit_me.html %}
+          {{ content }}
+        </div>
+
+        <!-- side bar -->
+        <div class="col-3 order-1">
+          <div>Викладацький склад</div>
+          <hr class="mt-1 mb-2">
+          {% for professor in site.course.professors %}
+          <div class="prof-badge my-2">
+            <div class="row">
+              <div class="col-4 left">
+                <img src="{{ professor.avatar_url }}">
+              </div>
+              <div class="col-8 right">
+                {{ professor.name }}<br>
+                {% if professor.lectures %}
+                <span class="badge badge-primary">лекція</span>
+                {% endif %}
+                {% if professor.practice %}
+                <span class="badge badge-success">практика</span>
+                {% endif %}
+                <br>
+                <small><a href="mailto:{{ professor.email }}">пошта</a></small>
+                <small><a href="{{ professor.calendar }}">розклад</a></small>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+          <div class="mt-5">Топ контрибутори</div>
+          <hr class="mt-1 mb-0">
+          {% for contributor in site.github.contributors limit:6 %}
+          <div class="contr-badge text-center my-2">
+            <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}"></a>
+            <small>{{ contributor.contributions }} комітів</small>
+          </div>
+          {% endfor %}
+
+          <button type="button" class="btn btn-block btn-sm btn-outline-primary">Усі контрибутори</button>
+          <button type="button" class="btn btn-block btn-sm btn-warning">Як при'єднатись?</button>
+        </div><!-- end sidebar -->
+
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
