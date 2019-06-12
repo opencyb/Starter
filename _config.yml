@@ -1,3 +1,6 @@
+# Site info (this SHOULD match your Github's repository name)
+baseurl: /Starter
+
 # Course info
 course:
   name: Назва Курсу

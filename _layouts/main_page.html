@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/main_page.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main_page.css">
     <title>{{ page.title }}</title>
   </head>
   <body>
@@ -37,16 +37,16 @@
         <div class="col-9 order-2">
           <ul class="nav nav-fill nav-tabs">
             <li class="nav-item">
-              <a class="nav-link {% if page.path == 'index.md' %}active{% endif %}" href="{{ site.url }}/"><i class="fa fa-book"></i> Конспекти</a>
+              <a class="nav-link {% if page.path == 'index.md' %}active{% endif %}" href="{{ site.baseurl }}"><i class="fa fa-book"></i> Конспекти</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if page.path == 'extra.md' %}active{% endif %}" href="{{ site.url }}/extra/"><i class="fa fa-globe"></i> Додаткові матеріали</a>
+              <a class="nav-link {% if page.path == 'extra.md' %}active{% endif %}" href="{{ site.baseurl }}/extra"><i class="fa fa-globe"></i> Додаткові матеріали</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if page.path == 'info.md' %}active{% endif %}" href="{{ site.url }}/info/"><i class="fa fa-info-circle"></i> Логістика курсу</a>
+              <a class="nav-link {% if page.path == 'info.md' %}active{% endif %}" href="{{ site.baseurl }}/info"><i class="fa fa-info-circle"></i> Логістика курсу</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if page.path == 'sitemap.html' %}active{% endif %}" href="{{ site.url }}/sitemap/"><i class="fa fa-sitemap"></i> Карта сайту</a>
+              <a class="nav-link {% if page.path == 'sitemap.html' %}active{% endif %}" href="{{ site.baseurl }}/sitemap"><i class="fa fa-sitemap"></i> Карта сайту</a>
             </li>
           </ul>
           {% include edit_me.html %}
