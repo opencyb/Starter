@@ -6,16 +6,16 @@ course:
   name: Назва Курсу
   professors:
 
-    - name: Делоне Б. М.
+    - name: Делоне Борис Михайлович
       avatar_url: https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/beard_male_man_face_avatar-512.png
-      email: delaunay.boris@google.com
+      email: delaunay@google.com
       calendar_link: "#"
       lectures: true
       practice: true
 
-    - name: Боголюбов М. М.
+    - name: Боголюбов Микола Миколайович
       avatar_url: https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/beard_male_man_face_avatar-512.png
-      email: delaunay.boris@google.com
+      email: bogolyubov@google.com
       calendar_link: "#"
       lectures: false
       practice: true

@@ -37,7 +37,7 @@
         <div class="col-9 order-2">
           <ul class="nav nav-fill nav-tabs">
             <li class="nav-item">
-              <a class="nav-link {% if page.path == 'index.md' %}active{% endif %}" href="{{ site.baseurl }}"><i class="fa fa-book"></i> Конспекти</a>
+              <a class="nav-link {% if page.path == 'index.md' %}active{% endif %}" href="{{ site.baseurl }}/index"><i class="fa fa-book"></i> Конспекти</a>
             </li>
             <li class="nav-item">
               <a class="nav-link {% if page.path == 'extra.md' %}active{% endif %}" href="{{ site.baseurl }}/extra"><i class="fa fa-globe"></i> Додаткові матеріали</a>
@@ -58,7 +58,7 @@
           <div>Викладацький склад</div>
           <hr class="mt-1 mb-2">
           {% for professor in site.course.professors %}
-          <div class="prof-badge my-2">
+          <div class="prof-badge mt-2 mb-3">
             <div class="row">
               <div class="col-4 left">
                 <img src="{{ professor.avatar_url }}">
@@ -66,14 +66,19 @@
               <div class="col-8 right">
                 {{ professor.name }}<br>
                 {% if professor.lectures %}
-                <span class="badge badge-primary">лекція</span>
+                <span class="badge badge-success">лекція</span>
                 {% endif %}
                 {% if professor.practice %}
-                <span class="badge badge-success">практика</span>
+                <span class="badge badge-danger">практика</span>
                 {% endif %}
-                <br>
-                <small><a href="mailto:{{ professor.email }}">пошта</a></small>
-                <small><a href="{{ professor.calendar }}">розклад</a></small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 left text-center">
+                <small><a href="{{ professor.calendar }}"><i class="fa fa-calendar"></i> розклад</a></small>
+              </div>
+              <div class="col-8 right">
+                <small><a href="mailto:{{ professor.email }}">{{ professor.email }}</a></small>
               </div>
             </div>
           </div>
@@ -88,7 +93,7 @@
           </div>
           {% endfor %}
 
-          <button type="button" class="btn btn-block btn-sm btn-outline-primary">Усі контрибутори</button>
+          <button type="button" class="btn btn-block btn-sm btn-outline-dark">Усі контрибутори</button>
           <button type="button" class="btn btn-block btn-sm btn-warning">Як при'єднатись?</button>
         </div><!-- end sidebar -->
 
